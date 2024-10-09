@@ -3,39 +3,123 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My Landing Page</title>
+    <title>TechNova Solutions</title>
     <style>
+        :root {
+            --primary-color: #00ffff;
+            --secondary-color: #ff00ff;
+            --tertiary-color: #ffff00;
+            --bg-color: #121212;
+            --text-color: #ffffff;
+        }
         body {
-            font-family: Arial, sans-serif;
+            font-family: 'Courier New', monospace;
             line-height: 1.6;
             margin: 0;
             padding: 0;
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            min-height: 100vh;
             display: flex;
+            flex-direction: column;
             justify-content: center;
-            align-items: center;
-            height: 100vh;
-            background-color: #f4f4f4;
         }
         .container {
-            text-align: center;
+            max-width: 1200px;
+            margin: 0 auto;
             padding: 20px;
-            background-color: white;
-            border-radius: 5px;
-            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        }
+        header {
+            text-align: center;
+            margin-bottom: 40px;
         }
         h1 {
-            color: #333;
+            font-size: 3rem;
+            margin-bottom: 10px;
+            text-shadow: 0 0 10px var(--primary-color),
+                         0 0 20px var(--secondary-color),
+                         0 0 30px var(--tertiary-color);
         }
-        p {
-            color: #666;
+        .tagline {
+            font-size: 1.2rem;
+            color: var(--primary-color);
+        }
+        .features {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around;
+            gap: 20px;
+        }
+        .feature {
+            flex-basis: calc(33.333% - 20px);
+            min-width: 250px;
+            background-color: rgba(255, 255, 255, 0.1);
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 255, 255, 0.3);
+            transition: transform 0.3s ease;
+        }
+        .feature:hover {
+            transform: translateY(-5px);
+        }
+        .feature h2 {
+            color: var(--secondary-color);
+        }
+        .feature p {
+            color: var(--text-color);
+        }
+        .cta {
+            text-align: center;
+            margin-top: 40px;
+        }
+        .cta-button {
+            display: inline-block;
+            padding: 10px 20px;
+            background-color: var(--primary-color);
+            color: var(--bg-color);
+            text-decoration: none;
+            border-radius: 5px;
+            font-weight: bold;
+            transition: background-color 0.3s ease;
+        }
+        .cta-button:hover {
+            background-color: var(--secondary-color);
+        }
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 2rem;
+            }
+            .feature {
+                flex-basis: 100%;
+            }
         }
     </style>
 </head>
 <body>
     <div class="container">
-        <h1>Welcome to My Landing Page</h1>
-        <p>This is a simple landing page hosted on GitHub Pages.</p>
-        <p>Feel free to customize this content to suit your needs!</p>
+        <header>
+            <h1>TechNova Solutions</h1>
+            <p class="tagline">Innovating the Future of IT</p>
+        </header>
+        <main>
+            <section class="features">
+                <div class="feature">
+                    <h2>Cloud Services</h2>
+                    <p>Scalable and secure cloud solutions tailored to your business needs.</p>
+                </div>
+                <div class="feature">
+                    <h2>AI Integration</h2>
+                    <p>Cutting-edge AI technologies to optimize your operations and decision-making.</p>
+                </div>
+                <div class="feature">
+                    <h2>Cybersecurity</h2>
+                    <p>Advanced protection systems to safeguard your digital assets.</p>
+                </div>
+            </section>
+            <div class="cta">
+                <a href="#" class="cta-button">Get Started</a>
+            </div>
+        </main>
     </div>
 </body>
 </html>
